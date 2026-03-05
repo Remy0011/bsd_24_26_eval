@@ -19,5 +19,5 @@ public class Produit {
 
     protected String urlmage;
 
-    protected String prix;
+    protected Integer prix;
 }
