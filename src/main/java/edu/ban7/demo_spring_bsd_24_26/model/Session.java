@@ -4,7 +4,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-public class CreateSession {
+public class Session {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
