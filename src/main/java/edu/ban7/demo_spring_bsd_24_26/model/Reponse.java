@@ -1,9 +1,6 @@
 package edu.ban7.demo_spring_bsd_24_26.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,4 +13,12 @@ public class Reponse {
     protected Integer id;
 
     protected Integer prix;
+
+    @ManyToOne
+    @JoinColumn(name = "question_id")
+    private Question question;
+
+    @ManyToOne
+    @JoinColumn(name = "produit_id")
+    private Produit produit;
 }
