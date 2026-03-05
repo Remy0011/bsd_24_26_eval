@@ -8,4 +8,6 @@ public class Reponse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
+
+    protected Integer prix;
 }

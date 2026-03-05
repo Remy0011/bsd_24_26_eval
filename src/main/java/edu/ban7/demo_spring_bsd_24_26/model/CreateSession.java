@@ -8,4 +8,8 @@ public class CreateSession {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
+
+    protected String nom;
+
+    protected int nombreJoueur;
 }

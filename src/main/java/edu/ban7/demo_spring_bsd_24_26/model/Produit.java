@@ -8,4 +8,10 @@ public class Produit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
+
+    protected String nom;
+
+    protected String urlmage;
+
+    protected String prix;
 }
