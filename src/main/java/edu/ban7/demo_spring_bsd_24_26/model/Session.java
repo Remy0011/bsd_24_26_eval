@@ -21,7 +21,6 @@ public class Session {
     protected int nombreJoueur;
 
     @Column(name = "nombre_joueur")
-    private int nombreJoueur;
 
     @OneToMany(mappedBy = "session")
     private List<Question> questions;
