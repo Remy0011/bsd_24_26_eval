@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface SessionDao extends JpaRepository<AppUser, Integer> {
+public interface SessionDao extends JpaRepository<Session, Integer> {
 
-    Optional<Session> findByName(String nom);
+    Optional<Session> findByNom(String nom);
 }

@@ -1,5 +1,6 @@
 package edu.ban7.demo_spring_bsd_24_26.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,10 +21,18 @@ public class Session {
 
     protected int nombreJoueur;
 
-    @Column(name = "nombre_joueur")
-
-    @OneToMany(mappedBy = "session")
+    @JsonIgnore
+    @OneToMany(mappedBy = "session", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Question> questions;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(
+            name = "session_joueur",
+            joinColumns = @JoinColumn(name = "session_id"),
+            inverseJoinColumns = @JoinColumn(name = "app_user_id")
+    )
+    private List<AppUser> joueurs;
 
     // Constructeurs
     public Session() {}
@@ -31,4 +40,5 @@ public class Session {
     public Session(String nom, int nombreJoueur) {
         this.nom = nom;
         this.nombreJoueur = nombreJoueur;
+    }
 }

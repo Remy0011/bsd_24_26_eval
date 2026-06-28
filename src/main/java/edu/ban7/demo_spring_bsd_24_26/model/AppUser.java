@@ -1,10 +1,13 @@
 package edu.ban7.demo_spring_bsd_24_26.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 
 @Getter
@@ -22,5 +25,9 @@ public class AppUser {
     protected String password;
 
     protected boolean admin;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "joueurs")
+    private List<Session> sessions;
 
 }

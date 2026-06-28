@@ -19,6 +19,6 @@ public class Reponse {
     private Question question;
 
     @ManyToOne
-    @JoinColumn(name = "produit_id")
-    private Produit produit;
+    @JoinColumn(name = "app_user_id")
+    private AppUser appUser;
 }
