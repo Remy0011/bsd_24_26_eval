@@ -1,0 +1,29 @@
+info:
+  name: Connexion
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/connexion
+  body:
+    type: json
+    data: |-
+      {
+        "email": "a@a.com",
+        "password": "1234"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        var data = res.getBody();
+        bru.setVar("token", data);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

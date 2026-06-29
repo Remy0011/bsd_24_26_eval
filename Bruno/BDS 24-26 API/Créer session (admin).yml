@@ -1,0 +1,23 @@
+info:
+  name: Créer session (admin)
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: http://localhost:8080/sessions
+  body:
+    type: json
+    data: |-
+      {
+        "nom": "Session 1"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

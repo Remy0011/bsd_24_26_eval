@@ -1,0 +1,14 @@
+opencollection: 1.0.0
+
+info:
+  name: BDS 24-26 API
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git
+    presets:
+      request:
+        type: http
+        url: http://localhost:8080

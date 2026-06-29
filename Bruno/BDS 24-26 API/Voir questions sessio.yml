@@ -1,0 +1,22 @@
+info:
+  name: Voir questions sessio
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: http://localhost:8080/sessions/1/questions
+  auth:
+    type: bearer
+    token: |-
+      {
+        "nom": "Session 1"
+      {
+        "nom": "Session 1"
+      {{token}}
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

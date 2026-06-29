@@ -1,0 +1,24 @@
+info:
+  name: Soumettre réponses
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: http://localhost:8080/sessions/1/reponses
+  body:
+    type: json
+    data: |-
+      [
+        { "questionId": 1, "prix": 75 },
+        { "questionId": 2, "prix": 120 }
+      ]
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
