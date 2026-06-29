@@ -248,6 +248,7 @@ public class SessionController {
         List<Reponse> reponses = reponseDao.findByQuestionSessionIdAndAppUserId(sessionId, user.getId());
 
         int ecartTotal = reponses.stream()
+                .filter(reponse -> reponse.getPrix() != null && reponse.getQuestion().getProduit().getPrix() != null)
                 .mapToInt(reponse -> Math.abs(reponse.getPrix() - reponse.getQuestion().getProduit().getPrix()))
                 .sum();
 

@@ -33,6 +33,7 @@ public class JwtFilter extends OncePerRequestFilter {
         String token = request.getHeader("Authorization");
 
         if (token != null) {
+            try {
 
             String jwt = token.substring(7);
 
@@ -45,7 +46,7 @@ public class JwtFilter extends OncePerRequestFilter {
             usernamePasswordAuthenticationToken
                     .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
-        }
+        } catch (Exception e) {
 
         filterChain.doFilter(request, response);
     }

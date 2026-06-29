@@ -8,6 +8,7 @@ import edu.ban7.demo_spring_bsd_24_26.view.AppUserView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,9 @@ public class AppUserController {
 
     @Autowired
     AppUserDao appUserDao;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 
     @GetMapping("/list")
@@ -47,7 +51,7 @@ public class AppUserController {
 
     @PostMapping
     ResponseEntity<AppUser> create(@RequestBody AppUser nouveauAppUser) {
-        
+        nouveauAppUser.setPassword(passwordEncoder.encode(nouveauAppUser.getPassword()));
         appUserDao.save(nouveauAppUser);
         
         return new ResponseEntity<>(nouveauAppUser, HttpStatus.CREATED);
