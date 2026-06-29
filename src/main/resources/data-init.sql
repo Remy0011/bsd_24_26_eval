@@ -2,7 +2,7 @@ INSERT INTO app_user (email, password, admin) VALUES
     ('a@a.com', '$2a$10$5WEsvVInsp51juqbyGg.iuYdOjqzTCLRSN0P8SueniFMdousb2Dyi', 1),
     ('b@b.com', '$2a$10$5WEsvVInsp51juqbyGg.iuYdOjqzTCLRSN0P8SueniFMdousb2Dyi', 0);
 
-INSERT INTO produit (nom, urlImage, prix) VALUES
+INSERT INTO produit (nom, url_image, prix) VALUES
     ('Casque audio', 'https://example.com/casque.jpg', 79),
     ('Clavier mecanique', 'https://example.com/clavier.jpg', 129),
     ('Souris gaming', 'https://example.com/souris.jpg', 49),

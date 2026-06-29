@@ -21,7 +21,7 @@ public class Produit {
 
     protected String nom;
 
-    @Column(name = "urlImage")
+    @Column(name = "url_image")
     protected String urlImage;
 
     protected Integer prix;
