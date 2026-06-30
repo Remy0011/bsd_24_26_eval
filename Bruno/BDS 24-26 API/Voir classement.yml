@@ -8,11 +8,7 @@ http:
   url: http://localhost:8080/sessions/1/classement
   auth:
     type: bearer
-    token: |-
-      [
-        { "questionId": 1, "prix": 75 },
-        { "questionId": 2, "prix": 120 }
-      {{token}}
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGEuY29tIiwicm9sZSI6IlJPTEVfQURNSU4ifQ.2EeRTmCJnghF1N3_mnBsCfIhraqs5uniopaQVMpBbRQ
 
 settings:
   encodeUrl: true

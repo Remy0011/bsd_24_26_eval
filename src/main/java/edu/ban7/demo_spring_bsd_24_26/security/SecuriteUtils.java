@@ -10,8 +10,8 @@ import java.util.Map;
 @Service
 public class SecuriteUtils implements ISecuriteUtils {
 
-    @Value("${jwt.secret}")
-    String jwtSecret;
+
+    String jwtSecret = "azerty";
 
     @Override
     public String getRole(AppUserDetails userDetails) {
